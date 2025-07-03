@@ -1,0 +1,262 @@
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+ background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: rgba(0, 0, 0, 0.3);
+  
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+nav.scrolled {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+.nav-links  a:hover {
+  color: #00c9a7;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  position: relative;
+}
+.hero-content {
+  z-index: 1;
+  max-width: 900px;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease-out;
+}
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color:#fff;
+  
+}
+.hero-content p{
+  color:#fff;
+}
+
+ .hero-content h1 span {
+  color: #00c9a7;
+
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.btn {
+  background: #f43f5e;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #e11d48;
+  transform: translateY(-2px);
+}
+
+/* Sections */
+section {
+  padding: 6rem 3rem;
+  text-align: center;
+}
+.about, .services, .projects, .testimonials {
+  color:#fff;
+}
+
+.about {
+  padding: 6rem 1.5rem; 
+   background: rgba(255, 255, 255, 0.05);         
+  
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #f3efef;
+}
+
+.about p {
+  max-width: 800px;               
+  margin: 0 auto;                
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.8;
+  padding: 0 1rem;                }
+
+
+ .projects {
+  color:#fff;
+ } 
+
+
+
+.services{
+background: rgba(96, 93, 93, 0.05);
+}
+.services h2{
+  color:#fff;
+}
+/* Cards & Grids */
+.service-grid, .project-grid, .testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.service-card, .project-card, .testimonial-card {
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(23, 22, 22, 0.533);
+}
+.service-card{
+  color:#fff;
+}
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.project-card h3 {
+  color:  #fff;
+  margin-top: 1rem;
+}
+.project-card p {
+  padding: 0 1.5rem 1.5rem;
+  color: #fff;
+}
+
+/* Contact */
+.contact {
+  background: #283345;
+  color: #fff;
+}
+.contact input, .contact textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #334155;
+  color: #fff;
+}
+.contact form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+  width: 100%;
+}
+
+.contact button {
+  background: #f43f5e;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.contact button:hover {
+  background: #e11d48;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 2rem;
+}
+footer a {
+  color: #a5b4fc;
+  text-decoration: none;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
